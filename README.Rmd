@@ -1,0 +1,53 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# sw
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+
+## Installation
+
+You can install  the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("joaobtj/sw")
+```
+## Example
+
+This is a basic example:
+
+```{r example}
+library(sw)
+ swb_franca_sp <- tibble::tribble(
+   ~m, ~et, ~p,
+   "Jan", 117, 275,
+   "Feb", 102, 218,
+   "Mar", 104, 180,
+   "Apr", 79, 60,
+   "May", 60, 25,
+   "Jun", 49, 20,
+   "Jul", 54, 15,
+   "Aug", 74, 12,
+   "Sep", 93, 48,
+   "Oct", 107, 113,
+   "Nov", 108, 180,
+   "Dec", 117, 245
+ )
+normal_swb(month = "m", ET0 = "et", P = "p", data = swb_franca_sp, awc = 125, start_month = "Apr")
+
+```
